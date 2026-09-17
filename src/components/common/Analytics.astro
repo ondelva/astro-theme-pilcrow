@@ -1,0 +1,22 @@
+---
+// Analytics slot. Fill analytics.provider and id in src/config.ts to enable it (off by default).
+import { analytics } from '../../config';
+const { provider, id } = analytics;
+---
+
+{provider === 'plausible' && id && (
+  <script is:inline defer data-domain={id} src="https://plausible.io/js/script.js"></script>
+)}
+{provider === 'ga4' && id && (
+  <>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+    <script is:inline define:vars={{ id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments); // eslint-disable-line prefer-rest-params -- gtag.js expects the arguments object
+      }
+      gtag('js', new Date());
+      gtag('config', id);
+    </script>
+  </>
+)}
