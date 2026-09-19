@@ -9,7 +9,7 @@ Set `site.url` in `src/config.ts` to your production URL. It is used for canonic
 ## Requirements
 
 - Node.js 22.12 or newer.
-- pnpm, pinned via the `packageManager` field in `package.json` (currently pnpm 12). Corepack cannot run pnpm 12; install the pinned version directly:
+- pnpm 9 or newer. `package.json` pins the exact version in the `packageManager` field; pnpm 10+ and Corepack switch to it on their own. To install that exact version yourself:
 
 ```sh
 npm i -g "$(node -p "require('./package.json').packageManager.split('+')[0]")"

@@ -16,6 +16,8 @@ A quiet, typography-first Astro theme for writers. Good type, generous measure, 
 
 ## Quick start
 
+You need Node.js 22.12+ and pnpm 9 or newer (`npm i -g pnpm`). `package.json` pins the exact pnpm version, and pnpm 10+ switches to it on its own.
+
 ```sh
 pnpm create astro@latest my-site -- --template ondelva/astro-theme-pilcrow
 cd my-site
