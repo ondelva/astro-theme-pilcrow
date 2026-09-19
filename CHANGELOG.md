@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.4] - 2026-09-19
+
+### Fixed
+
+- No more `[astro-icon] Failed to load icons from "src/icons"` warning on every build. `src/icons/` now ships empty, ready for your own SVG icons.
+
 ## [1.0.3] - 2026-09-19
 
 ### Fixed

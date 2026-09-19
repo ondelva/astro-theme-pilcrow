@@ -19,7 +19,7 @@ Everything site-specific lives in `src/config.ts`, `src/styles/global.css`, and 
 
 - `nav.header` — top bar links (`label`, `href`). Keep it short; four links fit a phone.
 - `nav.footer` — array of groups, each with a `title` and a `links` array.
-- `nav.social` — icon links (`label`, `href`, `icon`; icon names are `lucide:*` via astro-icon).
+- `nav.social` — icon links (`label`, `href`, `icon`; icon names are `lucide:*` via astro-icon). Your own SVG icons go in `src/icons/`; `src/icons/logo.svg` is referenced as `logo`.
 
 ## Color tokens
 
