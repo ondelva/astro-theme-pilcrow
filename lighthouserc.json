@@ -7,7 +7,7 @@
         "http://localhost/blog/typography-sampler/",
         "http://localhost/about/"
       ],
-      "numberOfRuns": 1
+      "numberOfRuns": 3
     },
     "assert": {
       "assertions": {
