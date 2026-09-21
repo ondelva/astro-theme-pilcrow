@@ -35,3 +35,5 @@ tags: [reading]
 - Footnotes, tables, and task lists (GFM) are supported out of the box.
 - Code blocks are highlighted with Shiki in light and dark themes.
 - Every post is attributed to `site.author` in `src/config.ts`.
+- Section components can be embedded in the body of a post or page. See [Section components in a
+  post](customization.md#section-components-in-a-post).

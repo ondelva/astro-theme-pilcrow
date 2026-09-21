@@ -47,6 +47,58 @@ Font files live in `src/assets/fonts/` (woff2, self-hosted, licensed under the O
 
 `src/pages/index.astro` imports section components from `src/components/sections/` and passes them props to compose the home page; edit this file to reorder or change home page content. Available sections: `Hero`, `RecentPosts`, `Features`, `Newsletter`, `CTA`. Section components only accept props; they do not fetch their own data.
 
+## Section components in a post
+
+Section components are not limited to the home page. Any of `Hero`, `RecentPosts`, `Features`,
+`Newsletter`, and `CTA` can be dropped into the body of a post or a page, for the places where a
+list or a call to action reads better than a paragraph.
+
+Two classes decide how it lands:
+
+- **`.not-prose`** stops the body styles (`.prose`) from restyling the component's headings, lists,
+  quotes, and tables. Every `.prose` rule honours it, so the component keeps the look it has on the
+  home page.
+- **`.breakout`** lets the component escape the reading column and span the viewport. Section
+  components re-center themselves at `max-w-5xl`, so this restores the width they have on the home
+  page rather than making them full-bleed. Omit it to keep the component at reading width.
+
+Import the component at the top of the `.mdx` file and wrap it:
+
+```mdx
+---
+title: What I changed this year
+description: A short review.
+pubDate: 2026-03-02
+---
+
+import Features from '../../components/sections/Features.astro';
+
+Normal prose stays at the reading measure.
+
+<div class="not-prose breakout">
+  <Features
+    title="Findings"
+    items={[
+      { title: 'A visible spine', body: 'Descriptive headings beat clever ones.' },
+      { title: 'Somewhere to stop', body: 'Readers resume at a section break.' },
+    ]}
+  />
+</div>
+
+And the prose picks up again here.
+```
+
+The import path is relative to the content file: `../../components/sections/` from
+`src/content/blog/`.
+
+Notes:
+
+- No section component needs to be modified or copied to be used this way.
+- `.breakout` relies on `overflow-x: clip` on `html` (set in `src/styles/global.css`). Keep it, or a
+  classic scrollbar will add horizontal scrolling.
+- The utility is defined once in `src/styles/global.css` (`@utility breakout`) and works in any
+  `.prose` body.
+
 ## UI strings
 
 `src/i18n/<locale>.ts` (`src/i18n/en.ts`, `src/i18n/ko.ts`). `site.locale` picks which file is used. To add a language, copy `en.ts` to `src/i18n/<locale>.ts`, translate it, and register it in `src/i18n/t.ts`. Do not hardcode user-facing strings inside components; add a key here and read it with `useT(Astro.currentLocale)`.

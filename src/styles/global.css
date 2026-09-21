@@ -72,6 +72,16 @@
   }
 }
 
+/* Breakout: lets a block escape the max-w-prose column of a post or page and span the full
+   viewport. Section components re-center themselves (mx-auto max-w-5xl px-4), so wrap one in
+   .not-prose.breakout and it keeps the width it has on the home page.
+   Needs html { overflow-x: clip } below, or a classic scrollbar adds horizontal scroll. */
+@utility breakout {
+  width: 100vw;
+  max-width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
 @layer base {
   .dark {
     --color-background: #141312;
@@ -83,6 +93,9 @@
 
   html {
     color-scheme: light;
+    /* A .breakout block is 100vw wide, which overflows by the scrollbar width. Clip, don't scroll.
+       Unlike overflow-x: hidden this keeps position: sticky working */
+    overflow-x: clip;
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-serif);
@@ -137,7 +150,9 @@
 }
 
 /* Markdown body (.prose). Styles only the elements we need, no typography plugin.
-   Wrap blocks that should opt out (forms, etc.) in .not-prose. */
+   Wrap blocks that should opt out (forms, embedded section components, etc.) in .not-prose.
+   Every rule below honours it, so a component keeps the look it has elsewhere.
+   Add the guard to any rule you add here. */
 @layer components {
   .prose {
     font-size: 1.1875rem;
@@ -154,29 +169,29 @@
     margin-top: 2.2em;
     margin-bottom: 0.6em;
   }
-  .prose h2 {
+  .prose h2:not(:where(.not-prose, .not-prose *)) {
     font-size: 1.75em;
   }
-  .prose h3 {
+  .prose h3:not(:where(.not-prose, .not-prose *)) {
     font-size: 1.35em;
   }
-  .prose h4 {
+  .prose h4:not(:where(.not-prose, .not-prose *)) {
     font-size: 1em;
     font-style: italic;
   }
   .prose :where(ul, ol):not(:where(.not-prose, .not-prose *)) {
     padding-left: 1.4em;
   }
-  .prose ul {
+  .prose ul:not(:where(.not-prose, .not-prose *)) {
     list-style: disc;
   }
-  .prose ol {
+  .prose ol:not(:where(.not-prose, .not-prose *)) {
     list-style: decimal;
   }
-  .prose li {
+  .prose li:not(:where(.not-prose, .not-prose *)) {
     margin-block: 0.4em;
   }
-  .prose li::marker {
+  .prose li:not(:where(.not-prose, .not-prose *))::marker {
     color: var(--color-muted);
   }
   .prose .contains-task-list {
@@ -188,21 +203,21 @@
     accent-color: var(--color-primary);
   }
   /* Tailwind preflight removes underlines; body links must not rely on color alone (WCAG 1.4.1) */
-  .prose a {
+  .prose a:not(:where(.not-prose, .not-prose *)) {
     text-decoration-line: underline;
   }
-  .prose blockquote {
+  .prose blockquote:not(:where(.not-prose, .not-prose *)) {
     border-left: 2px solid var(--color-primary);
     padding-left: 1.2em;
     font-style: italic;
     color: var(--color-muted);
   }
-  .prose hr {
+  .prose hr:not(:where(.not-prose, .not-prose *)) {
     border: 0;
     text-align: center;
     margin-block: 3em;
   }
-  .prose hr::after {
+  .prose hr:not(:where(.not-prose, .not-prose *))::after {
     content: '¶';
     color: var(--color-primary);
   }
@@ -213,7 +228,7 @@
     border-radius: 0.25rem;
     background: color-mix(in oklab, var(--color-foreground) 6%, transparent);
   }
-  .prose pre {
+  .prose pre:not(:where(.not-prose, .not-prose *)) {
     font-family: var(--font-mono);
     font-size: 0.8em;
     line-height: 1.6;
@@ -222,7 +237,7 @@
     border-radius: 0.5rem;
     overflow-x: auto;
   }
-  .prose table {
+  .prose table:not(:where(.not-prose, .not-prose *)) {
     width: 100%;
     font-family: var(--font-sans);
     font-size: 0.8em;
@@ -230,12 +245,12 @@
     display: block;
     overflow-x: auto;
   }
-  .prose :where(th, td) {
+  .prose :where(th, td):not(:where(.not-prose, .not-prose *)) {
     text-align: left;
     padding: 0.5em 1em 0.5em 0;
     border-bottom: 1px solid var(--color-border);
   }
-  .prose th {
+  .prose th:not(:where(.not-prose, .not-prose *)) {
     font-weight: 600;
     border-bottom-color: var(--color-muted);
   }
@@ -249,29 +264,29 @@
       font-weight: 500;
     }
   }
-  .prose img {
+  .prose img:not(:where(.not-prose, .not-prose *)) {
     border-radius: 0.25rem;
   }
-  .prose figcaption {
+  .prose figcaption:not(:where(.not-prose, .not-prose *)) {
     margin-top: 0.5em;
     font-family: var(--font-sans);
     font-size: 0.8em;
     color: var(--color-muted);
   }
-  .prose sup a {
+  .prose sup a:not(:where(.not-prose, .not-prose *)) {
     font-family: var(--font-sans);
     font-size: 0.8em;
     text-decoration: none;
     padding-inline: 0.1em;
   }
-  .prose .footnotes {
+  .prose .footnotes:not(:where(.not-prose, .not-prose *)) {
     margin-top: 4em;
     padding-top: 1.5em;
     border-top: 1px solid var(--color-border);
     font-size: 0.85em;
     color: var(--color-muted);
   }
-  .prose .footnotes :where(p, ol) {
+  .prose .footnotes :where(p, ol):not(:where(.not-prose, .not-prose *)) {
     margin-block: 0.4em;
   }
 

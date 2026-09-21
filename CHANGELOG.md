@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.2.0] - 2026-09-21
+
+### Added
+
+- Section components can be embedded in the body of a post or page. Wrap one in
+  `<div class="not-prose breakout">` and it keeps the width and look it has on the home page; the
+  prose around it stays at the reading measure. `breakout` is a new `@utility` in `global.css`, and
+  no section component had to change.
+
+### Fixed
+
+- `.not-prose` now opts a block out of every `.prose` rule. Quotes, tables, list spacing, link
+  underlines, and image rounding still leaked through, which restyled a section component embedded
+  in a post.
+
 ## [1.1.2] - 2026-09-21
 
 ### Fixed
