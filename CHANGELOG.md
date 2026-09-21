@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.0] - 2026-09-21
+
+### Added
+
+- Umami as an analytics provider, next to Plausible and GA4. `analytics.host` points a self-hosted
+  Plausible or Umami at your own origin; leave it empty for the hosted service. The default is
+  still `provider: null`, and a build with nothing set loads no third-party script.
+- Deploy buttons for Vercel and Netlify in the README, beside the Cloudflare one.
+
 ## [1.0.4] - 2026-09-19
 
 ### Fixed

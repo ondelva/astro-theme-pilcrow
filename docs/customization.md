@@ -65,7 +65,11 @@ Font files live in `src/assets/fonts/` (woff2, self-hosted, licensed under the O
 
 ## Analytics
 
-`src/config.ts`, `analytics.provider` (`null`, `'plausible'`, or `'ga4'`) and `analytics.id`.
+`src/config.ts`, `analytics.provider` (`null`, `'plausible'`, `'ga4'`, or `'umami'`) and
+`analytics.id` (the Plausible domain, the GA4 measurement id, or the Umami website id).
+
+`analytics.host` points a self-hosted Plausible or Umami at your own origin, with no trailing slash
+(`https://stats.example.com`). Leave it empty for the hosted service, and for GA4.
 
 ## Blog options
 

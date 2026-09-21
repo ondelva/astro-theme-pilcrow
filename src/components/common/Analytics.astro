@@ -1,11 +1,24 @@
 ---
 // Analytics slot. Fill analytics.provider and id in src/config.ts to enable it (off by default).
 import { analytics } from '../../config';
-const { provider, id } = analytics;
+const { provider, id, host } = analytics;
 ---
 
 {provider === 'plausible' && id && (
-  <script is:inline defer data-domain={id} src="https://plausible.io/js/script.js"></script>
+  <script
+    is:inline
+    defer
+    data-domain={id}
+    src={`${host || 'https://plausible.io'}/js/script.js`}
+  ></script>
+)}
+{provider === 'umami' && id && (
+  <script
+    is:inline
+    defer
+    data-website-id={id}
+    src={`${host || 'https://cloud.umami.is'}/script.js`}
+  ></script>
 )}
 {provider === 'ga4' && id && (
   <>
