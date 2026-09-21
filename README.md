@@ -56,6 +56,7 @@ This is the free, MIT-licensed edition. Pilcrow Pro is built on the same code an
 | i18n           | UI strings (en, ko)                             | + Localized routes, language switcher, hreflang                                               |
 | Integrations   | Analytics, Web3Forms contact form               | + Buttondown / Kit newsletter, Giscus comments, in-page form submit                           |
 | Theme variants | 1 color preset                                  | 4 color presets, 3 font pairings                                                              |
+| Footer credit  | One line, easy to remove                        | None                                                                                          |
 | Support        | GitHub Issues                                   | Email (im@ondelva.com), 2 business days                                                       |
 
 [See the Pro demo →](https://pilcrow.ondelva.com) · [Get Pro →](https://buy.polar.sh/polar_cl_8dCt7ufpdKweXNgPSp3DH73SlxkMoirMTbBuF3WJooD)
