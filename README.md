@@ -33,7 +33,12 @@ Colors and fonts: `src/styles/global.css` (`@theme` block). See [docs/customizat
 ## Deploy
 
 Static output. Works on Cloudflare Pages, Vercel, Netlify.
+
 [![Deploy to Cloudflare Pages](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ondelva/astro-theme-pilcrow)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ondelva/astro-theme-pilcrow)
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ondelva/astro-theme-pilcrow)
 
 See [docs/deploy.md](docs/deploy.md).
 
