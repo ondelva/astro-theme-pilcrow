@@ -15,7 +15,7 @@ Everything site-specific lives in `src/config.ts`, `src/styles/global.css`, and 
 
 ## Footer credit
 
-The footer carries one line crediting the theme: `Pilcrow theme by Ondelva`, linking to the
+The footer carries one line crediting the theme: `Pilcrow theme by ondelva`, linking to the
 theme repository. It is a plain link in `src/components/common/Footer.astro` — delete it if you would rather not have it.
 Keeping it is how other people find the theme. Pilcrow Pro ships without it.
 
