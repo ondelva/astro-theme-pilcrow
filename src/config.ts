@@ -5,7 +5,7 @@ export const site = {
   name: 'Pilcrow',
   description: 'A minimal, typography-first Astro theme.',
   url: 'https://example.com',
-  locale: 'en', // 'en' | 'ko' — UI strings come from src/i18n/<locale>.ts
+  locale: 'en', // 'en' | 'ko' | 'hu' — UI strings come from src/i18n/<locale>.ts
   author: 'Ada Marlow', // Fictional demo author. Replace with your name
   defaultOgImage, // 1200×630. A post's heroImage takes precedence
 } as const;

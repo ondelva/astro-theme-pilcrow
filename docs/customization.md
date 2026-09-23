@@ -9,7 +9,7 @@ Everything site-specific lives in `src/config.ts`, `src/styles/global.css`, and 
 - `name` — shown in the header and page titles.
 - `description` — used for meta description and RSS.
 - `url` — your production URL. Set this before deploying; it feeds canonical links, RSS, and sitemap.
-- `locale` — `'en'` or `'ko'`, picks the default interface strings.
+- `locale` — `'en'`, `'ko'`, or `'hu'` (or any language you add in `src/i18n/`), picks the default interface strings.
 - `author` — shown in the footer and JSON-LD structured data.
 - `defaultOgImage` — imported from `src/assets/og-default.png` (see below).
 
@@ -107,7 +107,7 @@ Notes:
 
 ## UI strings
 
-`src/i18n/<locale>.ts` (`src/i18n/en.ts`, `src/i18n/ko.ts`). `site.locale` picks which file is used. To add a language, copy `en.ts` to `src/i18n/<locale>.ts`, translate it, and register it in `src/i18n/t.ts`. Do not hardcode user-facing strings inside components; add a key here and read it with `useT(Astro.currentLocale)`.
+`src/i18n/<locale>.ts` (the theme ships `en.ts`, `ko.ts`, and `hu.ts`). `site.locale` picks which file is used. To add a language, copy `en.ts` to `src/i18n/<locale>.ts` and translate it; it is picked up automatically. Do not hardcode user-facing strings inside components; add a key here and read it with `useT(Astro.currentLocale)`.
 
 ## Dark mode
 

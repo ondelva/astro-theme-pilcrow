@@ -18,25 +18,25 @@ After any change, `pnpm check && pnpm build` must pass.
 
 ## Where to edit
 
-| To change                                | File                                                        | Notes                                                                                      |
-| ---------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Site name, URL, description, social, nav | `src/config.ts`                                             | No site-specific values are hardcoded anywhere else                                        |
-| Color palette                            | `@theme` block in `src/styles/global.css`                   | Tailwind v4 CSS variables. There is no `tailwind.config.*`                                 |
-| Fonts                                    | `@theme` in `src/styles/global.css` + `src/assets/fonts/`   | Self-hosted. Never link external font services                                             |
-| Logo, favicon                            | `src/assets/logo.svg`, `public/favicon.svg`                 |                                                                                            |
-| Default OG image                         | `src/assets/og-default.png`                                 | 1200×630. Imported by `site.defaultOgImage` in `config.ts`                                 |
-| Home section order and content           | `src/pages/index.astro`                                     | Assembles components from `src/components/sections/` via props                             |
-| Add a section                            | `src/components/sections/<Name>.astro`                      | Props only, no data fetching                                                               |
-| Section inside a post                    | Wrap it in `<div class="not-prose breakout">` in the `.mdx` | `breakout` is an `@utility` in `global.css`. Never modify the section component            |
-| Add a blog post                          | `src/content/blog/<slug>.mdx`                               | Frontmatter schema below                                                                   |
-| Content schema fields                    | `src/content.config.ts`                                     | Never remove fields; add new ones as optional                                              |
-| Header, footer                           | `src/components/common/Header.astro`, `Footer.astro`        | Link lists live in `config.ts`                                                             |
-| SEO meta                                 | `src/components/common/SEO.astro`                           | Pages only pass `title` / `description` props                                              |
-| New page                                 | `src/pages/<name>.astro` using `PageLayout`                 |                                                                                            |
-| UI strings (buttons, labels)             | `src/i18n/<locale>.ts`                                      | Never write UI strings inside components                                                   |
-| Change the UI language                   | `site.locale` in `config.ts`                                | Strings in `src/i18n/<locale>.ts` (`en`, `ko`). Components use `useT(Astro.currentLocale)` |
-| Newsletter, contact form                 | `forms` in `config.ts`                                      | Newsletter: `forms.newsletter.action`. Contact: Web3Forms key                              |
-| Analytics                                | `analytics` in `config.ts`                                  | Rendered by `src/components/common/Analytics.astro`                                        |
+| To change                                | File                                                        | Notes                                                                                                                                   |
+| ---------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Site name, URL, description, social, nav | `src/config.ts`                                             | No site-specific values are hardcoded anywhere else                                                                                     |
+| Color palette                            | `@theme` block in `src/styles/global.css`                   | Tailwind v4 CSS variables. There is no `tailwind.config.*`                                                                              |
+| Fonts                                    | `@theme` in `src/styles/global.css` + `src/assets/fonts/`   | Self-hosted. Never link external font services                                                                                          |
+| Logo, favicon                            | `src/assets/logo.svg`, `public/favicon.svg`                 |                                                                                                                                         |
+| Default OG image                         | `src/assets/og-default.png`                                 | 1200×630. Imported by `site.defaultOgImage` in `config.ts`                                                                              |
+| Home section order and content           | `src/pages/index.astro`                                     | Assembles components from `src/components/sections/` via props                                                                          |
+| Add a section                            | `src/components/sections/<Name>.astro`                      | Props only, no data fetching                                                                                                            |
+| Section inside a post                    | Wrap it in `<div class="not-prose breakout">` in the `.mdx` | `breakout` is an `@utility` in `global.css`. Never modify the section component                                                         |
+| Add a blog post                          | `src/content/blog/<slug>.mdx`                               | Frontmatter schema below                                                                                                                |
+| Content schema fields                    | `src/content.config.ts`                                     | Never remove fields; add new ones as optional                                                                                           |
+| Header, footer                           | `src/components/common/Header.astro`, `Footer.astro`        | Link lists live in `config.ts`                                                                                                          |
+| SEO meta                                 | `src/components/common/SEO.astro`                           | Pages only pass `title` / `description` props                                                                                           |
+| New page                                 | `src/pages/<name>.astro` using `PageLayout`                 |                                                                                                                                         |
+| UI strings (buttons, labels)             | `src/i18n/<locale>.ts`                                      | Never write UI strings inside components                                                                                                |
+| Change the UI language                   | `site.locale` in `config.ts`                                | Strings in `src/i18n/<locale>.ts` (`en`, `ko`, `hu`); a new file is picked up automatically. Components use `useT(Astro.currentLocale)` |
+| Newsletter, contact form                 | `forms` in `config.ts`                                      | Newsletter: `forms.newsletter.action`. Contact: Web3Forms key                                                                           |
+| Analytics                                | `analytics` in `config.ts`                                  | Rendered by `src/components/common/Analytics.astro`                                                                                     |
 
 ## Don't
 

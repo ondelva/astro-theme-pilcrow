@@ -53,7 +53,7 @@ This is the free, MIT-licensed edition. Pilcrow Pro is built on the same code an
 | Blog           | Tags, pagination, RSS                           | + Authors, series, table of contents, reading time, related posts, callouts, copy-code button |
 | SEO            | Meta, Open Graph, sitemap, JSON-LD              | + Generated Open Graph image per post                                                         |
 | Search         | –                                               | Pagefind                                                                                      |
-| i18n           | UI strings (en, ko)                             | + Localized routes, language switcher, hreflang                                               |
+| i18n           | UI strings (en, ko, hu)                         | + Localized routes, language switcher, hreflang                                               |
 | Integrations   | Analytics, Web3Forms contact form               | + Buttondown / Kit newsletter, Giscus comments, in-page form submit                           |
 | Theme variants | 1 color preset                                  | 4 color presets, 3 font pairings                                                              |
 | Footer credit  | One line, easy to remove                        | None                                                                                          |

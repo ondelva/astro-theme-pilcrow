@@ -2,6 +2,22 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.3.0] - 2026-09-23
+
+### Added
+
+- Hungarian UI strings, `src/i18n/hu.ts`. Set `site.locale: 'hu'` to use them.
+- Latin Extended font subsets for Newsreader, Inter, and JetBrains Mono. Characters such as `ő`,
+  `ű`, `ł`, `ř`, and `ş` now render in the theme fonts instead of falling back to a system font.
+  Each subset is its own `@font-face` with a `unicode-range`, so a page only downloads it when it
+  uses one of those characters: an English site loads exactly what it did before.
+
+### Fixed
+
+- Adding a language no longer needs a registration step. Every `src/i18n/<locale>.ts` is picked
+  up automatically; before, a new file was silently ignored until it was also imported in
+  `src/i18n/t.ts`.
+
 ## [1.2.3] - 2026-09-23
 
 ### Fixed
