@@ -294,13 +294,17 @@
     border-radius: 0.5rem;
     overflow-x: auto;
   }
+  /* The scroll is on the wrapper (src/…/table-scroll.ts): a table set to display: block
+     is no longer read out as a table. */
+  .prose .table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+  }
   .prose table:not(:where(.not-prose, .not-prose *)) {
     width: 100%;
     font-family: var(--font-sans);
     font-size: 0.8em;
     border-collapse: collapse;
-    display: block;
-    overflow-x: auto;
   }
   .prose :where(th, td):not(:where(.not-prose, .not-prose *)) {
     text-align: left;
