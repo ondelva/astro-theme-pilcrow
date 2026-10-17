@@ -6,7 +6,7 @@ import { useT } from '../../i18n/t';
 const t = useT(Astro.currentLocale);
 
 const year = new Date().getFullYear();
-const themeRepo = 'https://github.com/ondelva/astro-theme-pilcrow';
+const themeCredit = 'https://ondelva.com/themes/pilcrow';
 ---
 
 <footer class="border-border mt-24 border-t">
@@ -14,7 +14,7 @@ const themeRepo = 'https://github.com/ondelva/astro-theme-pilcrow';
     <div>
       <p>
         © {year} {site.author} ·{' '}
-        <a href={themeRepo} class="text-muted hover:text-foreground underline">
+        <a href={themeCredit} rel="nofollow" class="text-muted hover:text-foreground underline">
           Pilcrow
         </a>{' '}
         theme by ondelva
