@@ -300,6 +300,22 @@
     max-width: 100%;
     overflow-x: auto;
   }
+  /* A display formula wider than the column scrolls on its own (src/utils/math.ts). KaTeX's
+     glyphs overhang the line box by a few px at any formula height, and the scroll box would
+     clip them, so half of KaTeX's 1em margin moves inside as padding. */
+  .prose .katex-display:not(:where(.not-prose, .not-prose *)) {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-block: 0.5em;
+    padding-block: 0.5em;
+  }
+  /* Math off screen is not laid out until it nears the viewport, so KaTeX's fonts do not compete
+     on load with the text above it (Lighthouse on the sampler: 0.92 without this, 0.95 with it). */
+  .prose :is(p:has(.katex), .katex-display):not(:where(.not-prose, .not-prose *)) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 3lh;
+  }
   .prose table:not(:where(.not-prose, .not-prose *)) {
     width: 100%;
     font-family: var(--font-sans);

@@ -75,6 +75,14 @@ Here is a claim that needs support.[^1]
 
 And an inline mention of a specific value — say, the `font-variant-numeric: oldstyle-nums;` declaration that swaps in old-style figures for a serif face — reads differently set as code than it would as plain prose. The monospace treatment signals _this is a literal token, not a word choice_, which is exactly the distinction a reader needs when a sentence starts mixing prose with syntax.
 
+## Math, set as math
+
+An equation has its own typography, and prose is a poor substitute for it. Inline, between dollar signs, a formula sits on the line with the text: the line height of a paragraph is roughly $1.5 \times$ its font size, and a measure of $45$–$75$ characters keeps the eye from losing its place. Chemistry gets the same care: $\ce{2H2 + O2 -> 2H2O}$. A price like \$20 needs its dollar sign escaped in the source, or it starts a formula. Doubled dollar signs set a formula on its own line:
+
+$$
+\text{characters per line} \approx \frac{\text{measure}}{0.5\,\text{em}}
+$$
+
 ## A small checklist, and a small glossary
 
 Some sequences are neither strictly ordered nor simply related — they are a set of conditions to be satisfied, which is its own kind of list:

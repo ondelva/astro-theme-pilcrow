@@ -34,6 +34,10 @@ tags: [reading]
 
 - Footnotes, tables, and task lists (GFM) are supported out of the box.
 - Code blocks are highlighted with Shiki in light and dark themes.
+- Math in LaTeX: `$…$` inline, `$$…$$` on its own lines. It renders to HTML with KaTeX at build
+  time, and only pages with math load the KaTeX stylesheet. Two dollar signs in one paragraph
+  (`$20 and $30`) read as a formula between them; write `\$` for a literal dollar sign.
+  Chemical equations use mhchem: `$\ce{2H2 + O2 -> 2H2O}$`.
 - Every post is attributed to `site.author` in `src/config.ts`.
 - Section components can be embedded in the body of a post or page. See [Section components in a
   post](customization.md#section-components-in-a-post).

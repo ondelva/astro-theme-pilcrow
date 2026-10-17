@@ -25,6 +25,7 @@ type Props = ComponentProps<typeof SEO>;
     <link rel="preload" href={serifFont} as="font" type="font/woff2" crossorigin />
     <meta name="generator" content={Astro.generator} />
     <SEO {...Astro.props} />
+    <slot name="head" />
     <Analytics />
     {features.darkMode && <script is:inline>
       (() => {

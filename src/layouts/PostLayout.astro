@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import katexCss from 'katex/dist/katex.min.css?url';
 import BaseLayout from './BaseLayout.astro';
 import TagList from '../components/blog/TagList.astro';
 import { blog, site } from '../config';
@@ -10,8 +11,10 @@ const t = useT(Astro.currentLocale);
 
 interface Props {
   post: Post;
+  /** Set by the math plugin (src/utils/math.ts) when the post has `$…$` or `$$…$$` */
+  math?: boolean;
 }
-const { post } = Astro.props;
+const { post, math } = Astro.props;
 const { title, description, pubDate, updatedDate, heroImage, heroAlt, tags } = post.data;
 const url = new URL(Astro.url.pathname, Astro.site).href;
 const abs = (path: string) => new URL(path, Astro.site).href;
@@ -42,6 +45,7 @@ const jsonLd = [
 ---
 
 <BaseLayout title={title} description={description} image={image} type="article" jsonLd={jsonLd}>
+  {math && <link slot="head" rel="stylesheet" href={katexCss} />}
   <article class="mx-auto max-w-prose px-4 py-12 sm:py-16">
     <header>
       <p class="text-muted font-sans text-sm">
