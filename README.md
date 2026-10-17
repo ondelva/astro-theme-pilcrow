@@ -4,6 +4,8 @@ A quiet, typography-first Astro theme for writers. Good type, generous measure, 
 
 [Live demo](https://pilcrow-free.ondelva.com) · [Pro demo](https://pilcrow.ondelva.com) · [Get Pro](https://buy.polar.sh/polar_cl_8dCt7ufpdKweXNgPSp3DH73SlxkMoirMTbBuF3WJooD)
 
+What's new: [release notes](https://github.com/ondelva/astro-theme-pilcrow/releases) · [changelog in the demo](https://pilcrow-free.ondelva.com/whats-new/)
+
 ![screenshot](docs/screenshots/home-light.png)
 
 ## Features
