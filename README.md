@@ -2,7 +2,7 @@
 
 A quiet, typography-first Astro theme for writers. Good type, generous measure, nothing else in the way.
 
-[Live demo](https://pilcrow-free.ondelva.com) · [Pro demo](https://pilcrow.ondelva.com) · [Get Pro](https://buy.polar.sh/polar_cl_8dCt7ufpdKweXNgPSp3DH73SlxkMoirMTbBuF3WJooD)
+[Live demo](https://pilcrow-free.ondelva.com) · [Pro demo](https://pilcrow.ondelva.com) · [Get Pro](https://buy.polar.sh/polar_cl_8dCt7ufpdKweXNgPSp3DH73SlxkMoirMTbBuF3WJooD?utm_source=github)
 
 What's new: [release notes](https://github.com/ondelva/astro-theme-pilcrow/releases) · [changelog in the demo](https://pilcrow-free.ondelva.com/whats-new/)
 
@@ -61,7 +61,7 @@ This is the free, MIT-licensed edition. Pilcrow Pro is built on the same code an
 | Footer credit  | One line, easy to remove                        | None                                                                                          |
 | Support        | GitHub Issues                                   | Email (im@ondelva.com), 2 business days                                                       |
 
-[See the Pro demo →](https://pilcrow.ondelva.com) · [Get Pro →](https://buy.polar.sh/polar_cl_8dCt7ufpdKweXNgPSp3DH73SlxkMoirMTbBuF3WJooD)
+[See the Pro demo →](https://pilcrow.ondelva.com) · [Get Pro →](https://buy.polar.sh/polar_cl_8dCt7ufpdKweXNgPSp3DH73SlxkMoirMTbBuF3WJooD?utm_source=github)
 
 ## License
 
